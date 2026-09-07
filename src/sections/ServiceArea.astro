@@ -1,0 +1,40 @@
+---
+const dcNeighborhoods = [
+  'Downtown DC', 'Georgetown', 'Dupont Circle', 'Capitol Hill', 'Foggy Bottom',
+  'Navy Yard', 'The Wharf', 'NoMa', 'Penn Quarter', 'Adams Morgan',
+  'Judiciary Square', 'U Street Corridor',
+];
+
+const mdvaNeighborhoods = [
+  'Bethesda', 'Silver Spring', 'Chevy Chase', 'Arlington', 'Alexandria',
+  'Tysons Corner', 'Rockville', 'Gaithersburg', 'Fairfax',
+];
+---
+
+<section class="section-padding bg-[#F7F9FC]">
+  <div class="content-max-width">
+    <div class="text-center mb-14 lg:mb-16">
+      <span class="overline">AREAS WE SERVE</span>
+      <h2 class="text-3xl lg:text-[40px] font-semibold mt-3 leading-tight text-[#0B1F3F]">Washington, DC and the Greater DMV Area</h2>
+      <p class="text-[#6B7280] text-lg mt-4 leading-relaxed max-w-[700px] mx-auto">Next Level Commercial Cleaning proudly serves businesses throughout the District of Columbia, Maryland, and Virginia.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 max-w-[900px] mx-auto">
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-[#0B1F3F]">Washington, DC</h3>
+        <div class="flex flex-wrap gap-2">
+          {dcNeighborhoods.map((n) => (
+            <span class="bg-white border border-[#E5E7EB] rounded-full px-3 py-1.5 text-sm text-[#374151]">{n}</span>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-[#0B1F3F]">Maryland & Virginia</h3>
+        <div class="flex flex-wrap gap-2">
+          {mdvaNeighborhoods.map((n) => (
+            <span class="bg-white border border-[#E5E7EB] rounded-full px-3 py-1.5 text-sm text-[#374151]">{n}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

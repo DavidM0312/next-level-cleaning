@@ -1,0 +1,52 @@
+---
+const industriesDetail = [
+  {
+    name: 'Office Buildings',
+    desc: 'From small office suites to entire buildings, we maintain workspaces that impress clients and keep employees healthy and productive.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6h4"></path><path d="M18 12h2a2 2 0 0 1 2 2v6h-4"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>`,
+  },
+  {
+    name: 'Medical & Healthcare',
+    desc: 'HIPAA-aware cleaning with CDC-compliant protocols for medical offices, clinics, dental practices, and outpatient facilities.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10"></path><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path><path d="M12 10v6"></path><path d="M9 13h6"></path></svg>`,
+  },
+  {
+    name: 'Retail & Shopping',
+    desc: 'Keep your retail space inviting with daily cleaning, floor care, and window cleaning that enhances the customer experience.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>`,
+  },
+  {
+    name: 'Restaurants & Food Service',
+    desc: 'Thorough cleaning for dining areas, kitchens, and restrooms with food-safe products and health code compliance.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>`,
+  },
+  {
+    name: 'Schools & Education',
+    desc: 'Safe, effective cleaning for classrooms, cafeterias, gyms, and administrative offices using green cleaning products.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>`,
+  },
+  {
+    name: 'Government & Federal',
+    desc: 'Experienced with government buildings and federal contractors, meeting strict security and compliance requirements.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l8-4 8 4v14"></path><path d="M9 21v-6h6v6"></path><path d="M10 9h4"></path><path d="M10 13h4"></path></svg>`,
+  },
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="content-max-width">
+    <div class="text-center mb-14 lg:mb-16">
+      <span class="overline">EXPERIENCE ACROSS INDUSTRIES</span>
+      <h2 class="text-3xl lg:text-[40px] font-semibold mt-3 leading-tight text-[#0B1F3F]">Serving Every Business Sector in DC</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 animate-stagger">
+      {industriesDetail.map((ind) => (
+        <div class="bg-white border border-[#E5E7EB] rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#0FA3A8] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+          <div class="mb-4" set:html={ind.icon}></div>
+          <h3 class="text-xl font-semibold mb-3 text-[#0B1F3F]">{ind.name}</h3>
+          <p class="text-[#6B7280] leading-relaxed">{ind.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

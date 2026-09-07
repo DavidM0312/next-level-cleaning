@@ -1,0 +1,18 @@
+{
+  "name": "next-level-cleaning",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^4.16.19",
+    "autoprefixer": "^10.5.4",
+    "tailwindcss": "^3.4.19"
+  }
+}

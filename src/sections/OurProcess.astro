@@ -1,0 +1,40 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Free Consultation',
+    desc: 'We visit your facility, assess your needs, and provide a detailed, no-obligation quote tailored to your space and schedule.',
+  },
+  {
+    num: '02',
+    title: 'Custom Plan',
+    desc: 'We design a cleaning program specific to your facility — choosing the right services, frequency, and products for your business.',
+  },
+  {
+    num: '03',
+    title: 'Immaculate Results',
+    desc: 'Our trained team executes your plan with precision. Regular quality checks ensure consistent, exceptional results.',
+  },
+];
+---
+
+<section class="section-padding bg-[#0B1F3F]">
+  <div class="content-max-width">
+    <div class="text-center mb-12 lg:mb-16">
+      <span class="overline">HOW IT WORKS</span>
+      <h2 class="text-3xl lg:text-[40px] font-semibold text-white mt-3 leading-tight">Simple, Streamlined Service</h2>
+    </div>
+    <div class="relative">
+      <div class="hidden lg:block absolute top-[48px] left-[16%] right-[16%] h-px bg-[#0FA3A8]/30"></div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 relative z-10 animate-stagger">
+        {steps.map((step) => (
+          <div class="text-center">
+            <span class="text-5xl lg:text-6xl font-bold block mb-4 text-[#0FA3A8]">{step.num}</span>
+            <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
+            <p class="text-white/70 leading-relaxed max-w-[320px] mx-auto">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

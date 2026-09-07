@@ -1,0 +1,27 @@
+---
+const industries = [
+  { label: 'Office Buildings', icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0B1F3F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6h4"></path><path d="M18 12h2a2 2 0 0 1 2 2v6h-4"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>` },
+  { label: 'Medical & Healthcare', icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0B1F3F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10"></path><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path><path d="M12 10v6"></path><path d="M9 13h6"></path></svg>` },
+  { label: 'Retail Stores', icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0B1F3F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>` },
+  { label: 'Restaurants', icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0B1F3F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>` },
+  { label: 'Schools & Education', icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0B1F3F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>` },
+  { label: 'Government Buildings', icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0B1F3F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V7l8-4 8 4v14"></path><path d="M9 21v-6h6v6"></path><path d="M10 9h4"></path><path d="M10 13h4"></path></svg>` },
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="content-max-width">
+    <div class="text-center mb-14 lg:mb-16">
+      <span class="overline">INDUSTRIES WE SERVE</span>
+      <h2 class="text-3xl lg:text-[40px] font-semibold mt-3 leading-tight text-[#0B1F3F]">Specialized Cleaning for Every Business Type</h2>
+    </div>
+    <div class="flex flex-wrap justify-center gap-4 lg:gap-6 animate-stagger">
+      {industries.map((ind) => (
+        <div class="flex flex-col items-center gap-3 px-8 py-6 border border-[#E5E7EB] rounded-xl transition-all duration-300 hover:border-[#0FA3A8] hover:bg-[#F7F9FC] cursor-default min-w-[160px]">
+          <div set:html={ind.icon}></div>
+          <span class="text-sm font-medium text-center text-[#374151]">{ind.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

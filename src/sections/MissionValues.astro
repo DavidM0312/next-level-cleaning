@@ -1,0 +1,53 @@
+---
+const values = [
+  {
+    title: 'Excellence in Service',
+    desc: 'We hold ourselves to the highest standards, delivering quality results that exceed expectations on every clean.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>`,
+  },
+  {
+    title: 'Integrity and Accountability',
+    desc: 'Transparent pricing, honest communication, and doing what\'s right — we stand behind our work every time.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`,
+  },
+  {
+    title: 'Reliability and Consistency',
+    desc: 'We show up on time, every time. Consistency is the foundation of the trust our clients place in us.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`,
+  },
+  {
+    title: 'Professionalism',
+    desc: 'From our trained staff to our attention to detail, we conduct ourselves with the utmost professionalism.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>`,
+  },
+  {
+    title: 'Customer Satisfaction',
+    desc: 'Your satisfaction is our priority. We listen, adapt, and ensure every client is happy with our service.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>`,
+  },
+  {
+    title: 'Community Focused',
+    desc: 'As a Black-owned, family-owned business, we\'re proud to serve and uplift the DC community we call home.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0FA3A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
+  },
+];
+---
+
+<section class="section-padding bg-[#F7F9FC]">
+  <div class="content-max-width">
+    <div class="text-center mb-14 lg:mb-16">
+      <span class="overline">OUR CORE VALUES</span>
+      <h2 class="text-3xl lg:text-[40px] font-semibold mt-3 leading-tight text-[#0B1F3F]">The Principles That Guide Every Clean</h2>
+      <p class="text-[#6B7280] text-lg mt-4 leading-relaxed max-w-[700px] mx-auto">Our commitment to excellence is built on a foundation of core values that drive everything we do.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 animate-stagger">
+      {values.map((v) => (
+        <div class="bg-white border border-[#E5E7EB] rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#0FA3A8] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+          <div class="mb-4" set:html={v.icon}></div>
+          <h3 class="text-xl font-semibold mb-2 text-[#0B1F3F]">{v.title}</h3>
+          <p class="text-[#6B7280] leading-relaxed">{v.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

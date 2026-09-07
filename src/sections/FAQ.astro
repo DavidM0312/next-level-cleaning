@@ -1,0 +1,81 @@
+---
+const faqs = [
+  {
+    question: 'How do I get a quote for commercial cleaning services?',
+    answer: 'Simply fill out our contact form or call us at (202) 820-2730. We\'ll schedule a free on-site consultation to assess your facility and provide a detailed, no-obligation quote.',
+  },
+  {
+    question: 'What areas of Washington, DC do you serve?',
+    answer: 'We serve the entire DC metro area including all DC neighborhoods, as well as surrounding Maryland and Virginia communities. See our full service area list above.',
+  },
+  {
+    question: 'Are you licensed and insured?',
+    answer: 'Yes. Next Level Commercial Cleaning is fully licensed, bonded, and insured for your protection and peace of mind.',
+  },
+  {
+    question: 'What cleaning products do you use?',
+    answer: 'We use EPA Safer Choice certified green cleaning products that are effective yet safe for your employees and the environment.',
+  },
+  {
+    question: 'Can you clean after business hours?',
+    answer: 'Absolutely. We offer 24/7 service including nights, weekends, and holidays to minimize disruption to your operations.',
+  },
+];
+---
+
+<section class="section-padding bg-[#F7F9FC]">
+  <div class="content-max-width">
+    <div class="text-center mb-14 lg:mb-16">
+      <span class="overline">FREQUENTLY ASKED QUESTIONS</span>
+      <h2 class="text-3xl lg:text-[40px] font-semibold mt-3 leading-tight text-[#0B1F3F]">Common Questions About Our Services</h2>
+    </div>
+    <div class="max-w-[800px] mx-auto space-y-4">
+      {faqs.map((faq, i) => (
+        <div class="faq-item border border-[#E5E7EB] rounded-xl overflow-hidden transition-all duration-300 bg-white" data-index={i}>
+          <button class="faq-toggle w-full flex items-center justify-between px-6 py-4 text-left">
+            <span class="font-medium pr-4 text-[#0B1F3F]">{faq.question}</span>
+            <svg class="faq-chevron flex-shrink-0 transition-transform duration-300 text-[#0FA3A8]" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <div class="faq-answer overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
+            <div class="px-6 pb-4 text-[#6B7280] leading-relaxed">{faq.answer}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const item = toggle.closest('.faq-item');
+      const answer = item?.querySelector('.faq-answer');
+      const chevron = item?.querySelector('.faq-chevron');
+      const isOpen = item?.classList.contains('border-[#0FA3A8]');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach((el) => {
+        el.classList.remove('border-[#0FA3A8]');
+        el.querySelector('.faq-answer')?.setAttribute('style', 'max-height: 0; opacity: 0;');
+        el.querySelector('.faq-chevron')?.setAttribute('style', 'transform: rotate(0deg);');
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item?.classList.add('border-[#0FA3A8]');
+        answer?.setAttribute('style', 'max-height: 200px; opacity: 1;');
+        chevron?.setAttribute('style', 'transform: rotate(180deg);');
+      }
+    });
+  });
+
+  // Open first by default
+  const firstItem = document.querySelector('.faq-item');
+  if (firstItem) {
+    firstItem.classList.add('border-[#0FA3A8]');
+    const firstAnswer = firstItem.querySelector('.faq-answer');
+    const firstChevron = firstItem.querySelector('.faq-chevron');
+    firstAnswer?.setAttribute('style', 'max-height: 200px; opacity: 1;');
+    firstChevron?.setAttribute('style', 'transform: rotate(180deg);');
+  }
+</script>

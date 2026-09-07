@@ -1,0 +1,34 @@
+---
+const items = [
+  'Quality service delivered by trained professionals',
+  'Clear, consistent communication at every step',
+  'A dedicated team that treats your facility like their own',
+  'Flexible scheduling that works around your business hours',
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="content-max-width">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div class="flex-1">
+        <span class="overline">OUR PROMISE</span>
+        <h2 class="text-3xl lg:text-[40px] font-semibold mt-3 leading-tight text-[#0B1F3F]">Taking Cleaning to the Next Level</h2>
+        <div class="mt-6 space-y-4 text-[#6B7280] text-lg leading-relaxed">
+          <p>When you partner with Next Level Commercial Cleaning, you can expect quality service, clear communication, and a team dedicated to taking cleaning to the next level.</p>
+          <p>We don't believe in one-size-fits-all solutions. Every facility we serve receives a customized cleaning plan designed around their specific needs, schedule, and budget. Our hands-on approach ensures nothing gets overlooked.</p>
+        </div>
+        <ul class="mt-6 space-y-4">
+          {items.map((item) => (
+            <li class="flex items-start gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M20 6 9 17l-5-5"></path></svg>
+              <span class="text-[#374151]">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="flex-1">
+        <img src="/img/IMG_4228.jpg" alt="Next Level Commercial Cleaning professional using backpack vacuum under tables in a modern DC office" class="w-full rounded-xl shadow-lg object-cover" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
